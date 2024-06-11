@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Aplicacion web Mesón la Paloma">
+    <meta http-equiv="page-enter" content="blendTrans(duration=1)">
+    <meta http-equiv="page-exit" content="revealTrans(duration=0.5, transition=5)">
+    <title>MesonLaPaloma</title>
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!--Prefetch carga la pag a la que el usuario va-->
+
+<link rel="prefetch" href="nosotros.html" as="document">
+<link rel="prefetch" href="reservas.html" as="document">
+<link rel="prefetch" href="menu.html" as="document">
+<link rel="prefetch" href="contacto.html" as="document">
+
+
+
+<!--Preload precarga el contenido-->
+<link rel="preload" href="css/normalize.css" as="style">
+  <link rel="stylesheet" href="css/normalize.css">
+
+<link rel="preload" href="css/styleMesonLaPaloma.css" as="style">
+<link rel="stylesheet" href="css/styleMesonLaPaloma.css">
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&
+display=swap" crossorigin="crossorigin" as="font" >
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&
+display=swap" rel="stylesheet">
+
+<link rel="preload" href="img/logoMeson.png" as="image">
+
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">Blog <span 
+                        class="logo__bold">DeCafé</span></h1>
+            </a>
+            <nav class="navegacion">
+                <a href="nosotros.html" class="navegacion_enlace">Nosotros</a>
+                <a href="cursos.html" class="navegacion_enlace">Cursos</a>
+                <a href="contacto.html" class="navegacion_enlace">Contacto</a>
+            </nav>
+        </div>
+        </div>
+        <div class="header__texto">
+            <h2 class="no-margin">Blog de Café con Consejos y Cursos </h2>
+            <p class="no-margin">Aprende de los Expertos con las mejores recetas y consejos</p>
+
+        </div>
+    </header>
+    <main class="contenedor">
+        <h3 class="centrar-texto"> Sobre Nosotros</h3>
+        <div class="sobre-nosotros">
+            <div class="sobre-nosotros__imagen">
+                <img src="img/nosotros.jpg" alt="imagen nosotros">
+            </div>
+            <div class="sobre-nosotros__texto">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Nam lobortis sem in posuere volutpat. Vivamus ut neque ut nunc gravida ultricies. 
+                    Duis ut pretium augue. Curabitur placerat purus condimentum luctus ornare. 
+                    Pellentesque aliquam pretium condimentum. Nulla facilisi. Aliquam pulvinar sit amet lectus sed fermentum. I
+                    nteger ullamcorper neque ac eros vulputate, in commodo sem vestibulum. Vestibulum in nisl ac turpis viverra rutrum. 
+                    Nunc facilisis molestie vehicula.</p>
+
+                   <p> Phasellus mi eros, sodales eu sagittis eu, tincidunt quis ex. 
+                    Curabitur maximus malesuada urna sed pharetra. 
+                    Cras aliquet lectus eget augue elementum, vitae egestas ligula aliquam. 
+                    Suspendisse in tincidunt nisl. Ut pellentesque bibendum quam id tincidunt. 
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+                    Etiam non volutpat magna. 
+                    Nulla sit amet tortor vitae ipsum facilisis faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et 
+                    ac ullamcorper nisl bibendum at. 
+                    Aenean at scelerisque sapien. Vestibulum tincidunt nulla id porta ultricies.</p>
+            </div>
+
+        </div>
+        
+        
+      
+
+    </main>
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre centrar-texto">Mesón <span 
+                        class="logo__bold">La Paloma</span></h1>
+            </a>
+            <div class="footer-social-icon">
+                <h3>Siguenos</h3>
+                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <nav class="navegacion">
+                <a href="nosotros.html" class="navegacion_enlace">Nosotros</a>
+                <a href="menu.html" class="navegacion_enlace">Menu</a>
+                <a href="contacto.html" class="navegacion_enlace">Contacto</a>
+                <a href="reservas.html" class="navegacion_enlace">Reservas</a>
+            </nav>
+        </div>
+        </div>
+    </footer>
+    <script src="js/modernaizer.js"></script>
+</body>
+</html>

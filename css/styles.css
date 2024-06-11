@@ -1,0 +1,640 @@
+:root {
+    --fuenteHeading: 'PT+sans', sans-serif;
+    --fuenteParrafos: 'Open+sans', sans-serif;
+    --primario: #784d3c;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url(../img/fondo\ madera\ Bueno.jpg);
+    background-size: cover; /* La imagen de fondo cubrirá todo el área del body */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: italic normal 400 normal 16px/22px Arial, Verdana, sans-serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 3.8rem;
+    padding: 2rem;
+    color: #ffffff;
+}
+
+h3 {
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    color: #fff;
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+li {
+    list-style-type: none;
+}
+
+/** Header **/
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 1.875rem;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2.5rem 2.5rem 2.5rem;
+    }
+}
+
+.header .logo {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 0 0 1.5625rem;
+}
+
+.header .logo .logo__nombre {
+    color: #fff;
+    text-indent: 6rem;
+}
+
+@media (max-width: 768px) {
+    .header .logo .logo__nombre {
+        margin: 0 0 0 3.75rem;
+    }
+}
+
+.header .logo_meson {
+    width: 100%;
+    display: block;
+    max-width: 21.875rem;
+    min-height: 21.875rem;
+    margin: 0 0 0 1.875rem;
+}
+
+.header .logo_meson .logo_img {
+    margin: 0 0 0 5rem; /* Centra horizontalmente la imagen */
+    width: 100%;
+    max-width: 23rem;
+    max-height: 23rem;
+}
+
+@media (max-width: 768px) {
+    .header .logo_meson .logo_img {
+        max-width: 12.5rem;
+        max-height: 12.5rem;
+    }
+}
+
+.header .nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 23.75rem;
+    color: #fff;
+    font-family: var(--fuenteParrafos);
+    font-size: 20px;
+}
+
+.header .nav .ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    padding-right: 15rem;
+}
+
+.header .nav .ul .li .navegacion_enlace {
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.webp .header {
+    background-image: url(../img/barra2-1024x597.png);
+}
+
+.no-webp .header {
+    background-image: url(../img/barra2-1024x597.png);
+}
+
+.nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    padding-right: 15rem;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .nav ul {
+        font-size: 14px; /* Reduce el tamaño de las letras del menú */
+    }
+
+    .nav ul li a {
+        font-size: 14px; /* Asegúrate de que el tamaño de la letra también se reduzca */
+    }
+}
+
+/* content */
+
+.content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20, 18, 18, 0.8);
+    margin: 0 .9375rem;
+    width: 80%;
+}
+
+.content .entrada {
+    width: 100%;
+    margin: 1.25rem auto;
+}
+
+.entrada__costilla {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.entrada__hamburguesa {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1.25rem;
+}
+
+.imgen_costilla,
+.imagen_hamburguesa img {
+    width: 25rem; /* Tamaño de las imágenes */
+    height: 18.75rem;
+    border-radius: .625rem;
+    margin: 0 3.125rem 0 50px;
+}
+
+.texto {
+    width: 100%;
+    max-width: 31.25rem;
+    padding: .625rem; /* Espacio entre la imagen y el texto */
+}
+
+.imagen_personal img {
+    width: 25rem; /* Tamaño de las imágenes */
+    height: 35vh;
+    border-radius: 10px;
+    margin: 0 3.125rem 0 3.125rem;
+}
+
+/* Formulario */
+
+.formulario {
+    width: 50%; /* Ajusta el ancho del formulario */
+    padding: 1rem; /* Ajusta el relleno del formulario */
+    background-color: black; /* Color de fondo del formulario */
+    border-radius: 10px; /* Añade bordes redondeados al formulario */
+    box-shadow: 0px 0px 10px rgba(248, 245, 245, 0.888); /* Añade sombra al formulario */
+    margin: 5rem auto 5rem auto;
+}
+
+.campo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.campo_titulo {
+    justify-content: center;
+    font-size: 2.5rem; /* Ajusta el tamaño de la fuente */
+    color: white; /* Define el color del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    /* Ajusta el espacio entre el texto y los campos */
+}
+
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2.5rem;
+    font-weight: bold;
+}
+
+/* Estilos para los campos del formulario */
+.campo {
+    display: flex;
+    margin: 2rem 0 1rem 0;
+}
+
+.campo__label {
+    flex: 0 0 30%; /* Establece el ancho deseado para la etiqueta */
+    color: #fff;
+    text-align: right; /* Alinea el texto de la etiqueta a la derecha */
+    padding-right: 10px; /* Añade espacio entre la etiqueta y el campo */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.campo__field {
+    flex: 1; /* Usar todo el espacio disponible */
+    padding: 5px; /* Ajustar el relleno interno */
+    box-sizing: border-box; /* Incluir el relleno y el borde en el ancho total */
+    border-radius: 5px; /* Añadir bordes redondeados */
+    max-width: 200px; /* Define un ancho máximo */
+    text-align: justify; /* Justificar el texto */
+    text-align-last: justify; /* Justificar el último renglón del texto */
+}
+
+.campo__field--textarea {
+    height: 3.125rem;
+}
+
+/* Estilos para el botón del formulario */
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 2rem auto 2rem auto; /* Añade un margen superior al botón */
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    position: relative;
+    border: none;
+    background-color: var(--primario); /* Utiliza el color primario definido */
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: goldenrod;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.footer .barra {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 50px 0;
+}
+
+.footer h1 {
+    color: var(--blanco);
+    text-indent: 6rem;
+    font-size: 50px;
+    margin: 0 0 0 20px;
+}
+
+.footer .logo_img--footer {
+    border-radius: 60%;
+    width: 100%;
+    max-width: 21rem;
+    max-height: 21rem;
+    margin: 0 0 0 50px;
+    background-color: #da1f86;
+}
+
+.footer .contacto {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25rem;
+    max-width: 50%;
+}
+
+.footer .ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    gap: 20px;
+}
+
+.footer .ul .li {
+    font-size: 2rem;
+    color: var(--blanco);
+}
+
+.footer-social-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin-bottom: 1.5625rem;
+}
+
+.footer-social-icon a {
+    margin: 0 5px;
+}
+
+.footer-social-icon a i {
+    font-size: 3rem; /* Tamaño inicial de los íconos */
+}
+
+.facebook-bg {
+    color: #3b5998; /* Color de fondo de Facebook */
+    padding: 2px;
+}
+
+.twitter-bg {
+    color: #1da1f2; /* Color de fondo de Twitter */
+    padding: 2px;
+}
+
+.google-bg {
+    color: #dd4b39; /* Color de fondo de Google Plus */
+    padding: 2px;
+}
+
+.footer-social-link a i.fa-facebook {
+    background-color: #3B5998;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-twitter {
+    background-color: #55ACEE;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-google-plus {
+    background-color: #DD4B39;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-instagram {
+    background-color: #da1f86;
+}
+
+.footer .mapa {
+    max-width: 25%;
+    padding-right: 20px;
+}
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+.message-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.message-container p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.message-container .boton {
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+}
+
+    
+
+
+/* Responsive Styles */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2.5rem 2.5rem 2.5rem;
+    }
+
+    .header .nav {
+        order: 1; /* Nav primero */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .header .logo_meson {
+        order: 2; /* logo_meson segundo */
+        min-height: 18rem;
+    }
+
+    .header .logo {
+        order: 3; /* logo tercero */
+    }
+
+    .header .logo .logo__nombre {
+        font-size: 4rem; /* Ajusta el tamaño del texto del logo */
+        margin: 0;
+        text-align: center;
+    }
+
+    .header .logo_meson .logo_img {
+        max-width: 15rem;
+        max-height: 15rem;
+    }
+
+    .header .nav .ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding-right: 2rem;
+    }
+
+    .header .nav .ul .li .navegacion_enlace {
+        font-size: 1.2rem;
+    }
+
+    .content .section {
+        width: 90%;
+    }
+
+    .entrada__costilla, .entrada__hamburguesa {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgen_costilla, .imagen_hamburguesa img, .imagen_personal img {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    .texto {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .formulario {
+        width: 90%;
+        margin: 2rem auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .contacto {
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .footer .ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer .mapa {
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer-social-icon {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-social-icon a i {
+        font-size: 2rem; /* Reduce el tamaño de los íconos en pantallas pequeñas */
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header .nav .ul {
+        justify-content: center;
+    }
+
+    .content .section {
+        width: 80%;
+    }
+
+    .formulario {
+        width: 70%;
+    }
+
+    .footer .contacto {
+        width: 80%;
+    }
+
+    .footer .mapa {
+        width: 50%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .header .nav .ul {
+        justify-content: space-between;
+    }
+
+    .content .section {
+        width: 70%;
+    }
+
+    .formulario {
+        width: 50%;
+    }
+
+    .footer .contacto {
+        width: 50%;
+    }
+
+    .footer .mapa {
+        width: 25%;
+    }
+}
