@@ -207,3 +207,9 @@ app.get('/rechazar-reserva/:id', rejectReservation);
 app.listen(PORT, () => {
   console.log(`Servidor funcionando en http://localhost:${PORT}`);
 });
+
+module.exports = {
+  reservarMesa,
+  acceptReservation,
+  rejectReservation
+};

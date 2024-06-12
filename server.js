@@ -4,13 +4,13 @@ const http = require('http');
 const logger = require('morgan');
 const cors = require('cors');
 const path = require('path');
-const { reservarMesa, acceptReservation, rejectReservation } = require('./index');
+const { reservarMesa, acceptReservation, rejectReservation } = require('./index'); // Importar las funciones
 
 const app = express();
 const server = http.createServer(app);
 
-// Configuración del puerto
-const PORT = process.env.PORT || 4000;
+// Configuración del puerto (cambiado a 5000)
+const PORT = process.env.PORT || 6000;
 app.set('port', PORT);
 
 // Middlewares
@@ -65,6 +65,14 @@ app.get('/rechazar-reserva/:id', rejectReservation);
 app.use((err, req, res, next) => {
     console.error('Error en el servidor:', err);
     res.status(err.status || 500).send('Error en el servidor');
+});
+
+// Ruta de ejemplo para la página de contacto
+app.post('/enviar-mensaje', (req, res) => {
+    const { nombre, telefono, email, mensaje } = req.body;
+    // Aquí puedes agregar la lógica para manejar el mensaje enviado
+    console.log(`Nombre: ${nombre}, Teléfono: ${telefono}, Email: ${email}, Mensaje: ${mensaje}`);
+    res.send('Mensaje recibido');
 });
 
 // Iniciar el servidor

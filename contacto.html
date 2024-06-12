@@ -1,91 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Entrada">
-        <meta http-equiv="page-enter" content="blendTrans(duration=1)">
-        <meta http-equiv="page-exit" content="revealTrans(duration=0.5, transition=5)">
-        
-        <title>Reservas</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/styleMesonLaPaloma.css">
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto - Mesón La Paloma">
+    <title>Contacto - Mesón La Paloma</title>
+    <link rel="icon" type="image/png" href="img/favicon-01.svg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
 <body>
     <header class="header">
-        <div class="contenedor">
-            <div class="barra">
-                <a class="logo" href="index.html">
-                    <h1 class="logo__nombre no-margin centrar-texto">Blog <span 
-                        class="logo__bold">DeCafé</span></h1>
+        <a class="logo" href="index.html">
+            <h1 class="logo__nombre">Mesón <br> La Paloma</h1>
+        </a>
+        <div class="logo_meson">
+            <img id="mi-imagen" class="logo_img" fetchpriority="high" src="img/logoMeson.png" alt="Logo del Mesón La Paloma">
+        </div>
+        <nav class="nav">
+            <ul class="ul">
+                <li class="li"><a href="nosotros.html" class="navegacion_enlace">Nosotros</a></li>
+                <li class="li"><a href="menu.html" class="navegacion_enlace">Menú</a></li>
+                <li class="li"><a href="contacto.html" class="navegacion_enlace">Contacto</a></li>
+                <li class="li"><a href="reservas.html" class="navegacion_enlace">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <section class="section">
+            <h2>Contacto</h2>
+            <form class="formulario" method="post" action="/enviar-mensaje">
+                <div class="campo">
+                    <label for="nombre" class="campo__label">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="campo__field" required>
+                </div>
+                <div class="campo">
+                    <label for="telefono" class="campo__label">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" class="campo__field" required>
+                </div>
+                <div class="campo">
+                    <label for="email" class="campo__label">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" class="campo__field" required>
+                </div>
+                <div class="campo">
+                    <label for="mensaje" class="campo__label">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" class="campo__field campo__field--textarea" required></textarea>
+                </div>
+                <input type="submit" value="Enviar" class="boton boton--primario">
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="barra">
+            <a class="logo" href="index.html">
+                <h1 class="logo__nombre">Mesón <br> La Paloma</h1>
             </a>
+            <div class="footer-social-icon">
+                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
             <nav class="navegacion">
                 <a href="nosotros.html" class="navegacion_enlace">Nosotros</a>
-                <a href="cursos.html" class="navegacion_enlace">Cursos</a>
+                <a href="menu.html" class="navegacion_enlace">Menú</a>
                 <a href="contacto.html" class="navegacion_enlace">Contacto</a>
+                <a href="reservas.html" class="navegacion_enlace">Reservas</a>
             </nav>
         </div>
-        </div>
-        <div class="header__texto">
-            <h2 class="no-margin">Ven a Visitarnos</h2>
-            <p class="no-margin"></p>
-
-        </div>
-    </header>
-
-        <main class="Blog">
-            <h3 class="centrar-texto">Contacto</h3>
-            
-            <div class="contacto__bg"></div>
-            
-            <form class="formulario">
-
-                <div class="campo">
-                    <label class="campo__label" for="nombre">Nombre</label>
-                    <input class="campo__field" type="text" placeholder="Tu Nombre" id="nombre"> 
-                </div>
-                
-                <div class="campo">
-                    <label class="campo__label" for="email">E-mail</label>
-                    <input class="campo__field" type="email" placeholder="Tu Email" id="email"> 
-                </div>
-                
-                <div class="campo">
-                    <label class="campo__label" for="mensaje">Mensaje</label> 
-                    <textarea class="campo__field campo__field--textarea" id="mensaje"></textarea>
-                </div>
-                   
-                
-                <div class="campo">
-                    <input type="submit" value="Enviar" class="boton boton--primario">
-                </div>
-           </form>
-        
-        </main>
-      
-        <footer class="footer">
-            <div class="contenedor">
-                <div class="barra">
-                    <a class="logo" href="index.html">
-                        <h1 class="logo__nombre centrar-texto">Mesón <span 
-                            class="logo__bold">La Paloma</span></h1>
-                </a>
-                <div class="footer-social-icon">
-                    <h3>Siguenos</h3>
-                    <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                    <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                    <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <nav class="navegacion">
-                    <a href="nosotros.html" class="navegacion_enlace">Nosotros</a>
-                    <a href="menu.html" class="navegacion_enlace">Menu</a>
-                    <a href="contacto.html" class="navegacion_enlace">Contacto</a>
-                    <a href="reservas.html" class="navegacion_enlace">Reservas</a>
-                </nav>
-            </div>
-            </div>
-        </footer>
+    </footer>
     <script src="js/modernaizer.js"></script>
 </body>
 </html>
