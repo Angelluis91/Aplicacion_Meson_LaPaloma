@@ -26,6 +26,7 @@ document.getElementById('reservaForm').addEventListener('submit', async function
 
     // Realizar la solicitud al servidor
     try {
+        const API_URL = 'https://tu-app.herokuapp.com'; // Cambia esto por la URL de tu backend en Heroku
         const response = await fetch(`${API_URL}/reservar-mesa`, {
             method: 'POST',
             headers: {

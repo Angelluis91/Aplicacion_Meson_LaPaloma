@@ -17,7 +17,7 @@ app.set('port', PORT);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({ origin: '*' }));  // Permitir solicitudes desde cualquier origen
 
 // Deshabilitar la cabecera 'X-Powered-By' por razones de seguridad
 app.disable('x-powered-by');
