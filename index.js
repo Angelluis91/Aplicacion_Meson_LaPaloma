@@ -1,18 +1,16 @@
-const pg = require('pg');
+const express = require('express');
+const { Pool } = require('pg');
 const dotenv = require('dotenv');
 const { v4: uuidv4 } = require('uuid');
 const nodemailer = require('nodemailer');
 
 dotenv.config();
 
-const { Pool } = pg;
+const app = express();
+const PORT = process.env.PORT || 4000;
 
+// Configurar la conexión a PostgreSQL
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
@@ -24,8 +22,8 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,  // Usa tu contraseña específica de aplicación aquí
-  },
+    pass: process.env.EMAIL_PASS
+  }
 });
 
 async function sendEmail(to, subject, text) {
@@ -197,3 +195,16 @@ async function rejectReservation(req, res, next) {
 }
 
 module.exports = { reservarMesa, acceptReservation, rejectReservation };
+
+// Inicializar servidor
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/reservar-mesa', reservarMesa);
+
+app.get('/aceptar-reserva/:id', acceptReservation);
+app.get('/rechazar-reserva/:id', rejectReservation);
+
+app.listen(PORT, () => {
+  console.log(`Servidor funcionando en http://localhost:${PORT}`);
+});
