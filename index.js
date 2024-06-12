@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
 const { v4: uuidv4 } = require('uuid');
@@ -194,9 +195,7 @@ async function rejectReservation(req, res, next) {
   }
 }
 
-module.exports = { reservarMesa, acceptReservation, rejectReservation };
-
-// Inicializar servidor
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
