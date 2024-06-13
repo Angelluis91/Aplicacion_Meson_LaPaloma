@@ -1,74 +1,60 @@
 const express = require('express');
-const http = require('http');
-const logger = require('morgan');
+const { Pool } = require('pg');
 const cors = require('cors');
-const path = require('path');
-const { reservarMesa, acceptReservation, rejectReservation } = require('./index');
+const morgan = require('morgan');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const app = express();
-const server = http.createServer(app);
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
-// Configuración del puerto
-const PORT = process.env.PORT || 4000;
-app.set('port', PORT);
-
-// Middlewares
-app.use(logger('dev'));
+app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: '*' }));  // Permitir solicitudes desde cualquier origen
 
-// Deshabilitar la cabecera 'X-Powered-By' por razones de seguridad
-app.disable('x-powered-by');
+// Rutas y lógica para manejar reservas
 
-// Servir archivos estáticos (HTML, CSS, JS, imágenes)
-app.use(express.static(path.join(__dirname, '/')));
-
-// Rutas principales
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+// Enviar correos
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
 });
 
-app.get('/nosotros', (req, res) => {
-    res.sendFile(path.join(__dirname, 'nosotros.html'));
+app.post('/reserva', async (req, res) => {
+  const { nombre, email, telefono, fecha, hora, comensales } = req.body;
+  try {
+    const result = await pool.query(
+      'INSERT INTO reservas (nombre, email, telefono, fecha, hora, comensales) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+      [nombre, email, telefono, fecha, hora, comensales]
+    );
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Confirmación de Reserva',
+      text: `Hola ${nombre}, tu reserva para ${comensales} personas el ${fecha} a las ${hora} ha sido confirmada.`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return res.status(500).send(error.toString());
+      }
+      res.status(200).json(result.rows[0]);
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-app.get('/menu', (req, res) => {
-    res.sendFile(path.join(__dirname, 'menu.html'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
-app.get('/contacto', (req, res) => {
-    res.sendFile(path.join(__dirname, 'contacto.html'));
-});
-
-app.get('/reservas', (req, res) => {
-    res.sendFile(path.join(__dirname, 'reservas.html'));
-});
-
-app.get('/reserva_exitosa', (req, res) => {
-    res.sendFile(path.join(__dirname, 'reserva_exitosa.html'));
-});
-
-app.get('/reserva_erronea', (req, res) => {
-    res.sendFile(path.join(__dirname, 'reserva_erronea.html'));
-});
-
-// Ruta para la reserva de mesa
-app.post('/reservar-mesa', reservarMesa);
-
-// Rutas para aceptar o rechazar reservas
-app.get('/aceptar-reserva/:id', acceptReservation);
-app.get('/rechazar-reserva/:id', rejectReservation);
-
-// Manejo de errores
-app.use((err, req, res, next) => {
-    console.error('Error en el servidor:', err);
-    res.status(err.status || 500).send('Error en el servidor');
-});
-
-// Iniciar el servidor
-server.listen(PORT, () => {
-    console.log(`Servidor funcionando en http://localhost:${PORT}`);
-});
-
-module.exports = { app, server };

@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background-image: url(../img/fondo\ madera\ Bueno.jpg);
+    background-image: url(../img/fondo\ madera\ Bueno.webp);
     background-size: cover; /* La imagen de fondo cubrirá todo el área del body */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed;
@@ -162,11 +162,11 @@ li {
 }
 
 .webp .header {
-    background-image: url(../img/barra2-1024x597.png);
+    background-image: url(../img/barra2-1024x597.webp);
 }
 
 .no-webp .header {
-    background-image: url(../img/barra2-1024x597.png);
+    background-image: url(../img/barra2-1024x597.webp);
 }
 
 .nav ul {
