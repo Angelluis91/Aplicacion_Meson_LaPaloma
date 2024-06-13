@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+   "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "Angel Belisario",
   "license": "ISC",
@@ -19,5 +20,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
-  }
+  },
+  "engines": {
+    "node": "14.x"
+}
 }
