@@ -5,6 +5,7 @@
     --gris: #e1e1e1;
     --blanco: #ffffff;
     --negro: #000000;
+    --contraste-alto: #333333;
 }
 
 html {
@@ -283,12 +284,7 @@ li {
     /* Ajusta el espacio entre el texto y los campos */
 }
 
-.campo__label {
-    flex: 0 0 9rem;
-    text-align: right;
-    padding-right: 2.5rem;
-    font-weight: bold;
-}
+
 
 /* Estilos para los campos del formulario */
 .campo {
@@ -300,7 +296,7 @@ li {
     flex: 0 0 30%; /* Establece el ancho deseado para la etiqueta */
     color: #fff;
     text-align: right; /* Alinea el texto de la etiqueta a la derecha */
-    padding-right: 10px; /* Añade espacio entre la etiqueta y el campo */
+    padding-right: .625rem; /* Añade espacio entre la etiqueta y el campo */
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -313,6 +309,7 @@ li {
     max-width: 200px; /* Define un ancho máximo */
     text-align: justify; /* Justificar el texto */
     text-align-last: justify; /* Justificar el último renglón del texto */
+    border: 1px solid var(--contraste-alto);
 }
 
 .campo__field--textarea {
