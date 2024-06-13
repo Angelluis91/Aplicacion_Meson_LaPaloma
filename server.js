@@ -9,7 +9,7 @@ const { reservarMesa, acceptReservation, rejectReservation } = require('./index'
 const app = express();
 const server = http.createServer(app);
 
-// Configuración del puerto (cambiado a 5000)
+
 const PORT = process.env.PORT || 6000;
 app.set('port', PORT);
 
