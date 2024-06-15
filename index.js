@@ -1,5 +1,3 @@
-const express = require('express');
-const cors = require('cors');
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
 const { v4: uuidv4 } = require('uuid');
@@ -7,18 +5,15 @@ const nodemailer = require('nodemailer');
 
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 4000;
-
-// Configurar la conexión a PostgreSQL
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  ssl: false 
 });
 
-// Configuración del email
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -47,13 +42,10 @@ function esHorarioValido(diaSemana, hora) {
   const [horas, minutos] = hora.split(':').map(Number);
 
   if (diaSemana === 1) {
-    // Lunes cerrado
     return false;
   } else if (diaSemana >= 2 && diaSemana <= 6) {
-    // Martes a Sábado: 8:30 a 1:00 del día siguiente
     return (horas > 8 || (horas === 8 && minutos >= 30)) || (horas < 1 || (horas === 1 && minutos === 0));
   } else if (diaSemana === 0) {
-    // Domingo: 9:00 a 17:00
     return (horas > 9 || (horas === 9 && minutos >= 0)) && (horas < 17 || (horas === 17 && minutos === 0));
   }
 
@@ -65,6 +57,7 @@ async function reservarMesa(req, res, next) {
     const { nombre, telefono, email, fecha, hora, personas } = req.body;
 
     if (!nombre || !telefono || !email || !fecha || !hora || !personas || isNaN(personas) || personas <= 0) {
+      console.log('Datos de entrada inválidos:', req.body);
       return res.status(400).redirect('/reserva_erronea.html');
     }
 
@@ -72,6 +65,7 @@ async function reservarMesa(req, res, next) {
     const diaSemana = fechaReserva.getUTCDay();
 
     if (!esHorarioValido(diaSemana, hora)) {
+      console.log('Horario de reserva no válido:', diaSemana, hora);
       return res.status(400).redirect('/reserva_erronea.html');
     }
 
@@ -92,6 +86,7 @@ async function reservarMesa(req, res, next) {
     );
 
     if (disponibilidadQuery.rows.length === 0) {
+      console.log('No hay mesas disponibles para la fecha y hora:', { fecha, hora, personas });
       return res.status(400).redirect('/reserva_erronea.html');
     }
 
@@ -122,7 +117,7 @@ async function reservarMesa(req, res, next) {
     const reservaId = reservaResult.rows[0].reserva_id;
 
     const userSubject = 'Confirmación de reserva';
-    const userText = `Hola ${nombre},\n\nTu reserva ha sido recibida, sera confirmada lo antes posible por el local.\n\nDetalles de la reserva:\n\n- Fecha: ${fecha}\n- Hora: ${hora}\n- Número de personas: ${personas}\n\nLa reserva se mantendrá por 15 minutos a partir de la hora reservada. De lo contrario, la perderás. Para cualquier cambio, contacta con el restaurante al número 608 83 65 64.\n\nDirección del restaurante:\nCalle Artajona 9, Madrid\n\n¡Te esperamos!`;
+    const userText = `Hola ${nombre},\n\nTu reserva ha sido recibida, será confirmada lo antes posible por el local.\n\nDetalles de la reserva:\n\n- Fecha: ${fecha}\n- Hora: ${hora}\n- Número de personas: ${personas}\n\nLa reserva se mantendrá por 15 minutos a partir de la hora reservada. De lo contrario, la perderás. Para cualquier cambio, contacta con el restaurante al número 608 83 65 64.\n\nDirección del restaurante:\nCalle Artajona 9, Madrid\n\n¡Te esperamos!`;
 
     await sendEmail(email, userSubject, userText);
 
@@ -195,21 +190,30 @@ async function rejectReservation(req, res, next) {
   }
 }
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+async function enviarMensaje(req, res, next) {
+  try {
+    const { nombre, telefono, email, mensaje } = req.body;
 
-app.post('/reservar-mesa', reservarMesa);
+    if (!nombre || !telefono || !email || !mensaje) {
+      return res.status(400).redirect('/contacto.html');
+    }
 
-app.get('/aceptar-reserva/:id', acceptReservation);
-app.get('/rechazar-reserva/:id', rejectReservation);
+    const ownerEmail = 'angelluis1991@gmail.com';
+    const subject = 'Nuevo mensaje de contacto';
+    const text = `Nuevo mensaje de contacto:\n\n- Nombre: ${nombre}\n- Teléfono: ${telefono}\n- Email: ${email}\n- Mensaje: ${mensaje}`;
 
-app.listen(PORT, () => {
-  console.log(`Servidor funcionando en http://localhost:${PORT}`);
-});
+    await sendEmail(ownerEmail, subject, text);
+
+    return res.status(200).redirect('/index.html');
+  } catch (error) {
+    console.error('Error al enviar el mensaje:', error);
+    return res.status(500).redirect('/contacto.html');
+  }
+}
 
 module.exports = {
   reservarMesa,
   acceptReservation,
-  rejectReservation
+  rejectReservation,
+  enviarMensaje 
 };

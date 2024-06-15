@@ -122,7 +122,10 @@ li {
 }
 
 .header .logo_meson .logo_img {
-    margin: 0 0 0 5rem; /* Centra horizontalmente la imagen */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 23rem;
     max-height: 23rem;
@@ -334,6 +337,66 @@ li {
     border: none;
     background-color: var(--primario); /* Utiliza el color primario definido */
 }
+/* Estilos para la sección 'Sobre Nosotros' */
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.sobre-nosotros__imagen {
+    margin-bottom: 2rem;
+}
+
+.imagen-redondeada {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.sobre-nosotros__texto {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.texto-contenedor p {
+    text-align: justify;
+    color: var(--blanco);
+    font-family: var(--fuenteParrafos);
+}
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+.message-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.message-container p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.message-container .boton {
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+}
+
 
 /* footer */
 
@@ -447,35 +510,25 @@ li {
     max-width: 25%;
     padding-right: 20px;
 }
-.message-container {
+
+.footer-uber-eats {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin: 2rem auto;
-    border-radius: 10px;
-}
-
-.message-container h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.message-container p {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.message-container .boton {
-    font-size: 1.8rem;
-    padding: 1rem 3rem;
     margin-top: 1rem;
 }
+
+.logo-uber-eats {
+    max-width: 10rem;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Asegurarse de que los íconos de las redes sociales tengan un tamaño adecuado */
+.footer-social-icon a i {
+    font-size: 3rem;
+}
+
 
     
 
