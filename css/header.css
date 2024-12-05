@@ -1,0 +1,140 @@
+/* Header principal */
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 1.875rem;
+    width: 100%;
+}
+
+/* Logo principal */
+.header .logo {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0 0 0 1.5625rem;
+    color: #fff; /* Cambiar el color del nombre a blanco */
+    font-size: 3rem;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.header .logo_meson {
+    width: 100%;
+    display: block;
+    max-width: 21.875rem;
+    min-height: 21.875rem;
+    margin: 0 0 0 1.875rem;
+}
+
+/* Navegación */
+.header .nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    color: #fff;
+    font-family: var(--fuenteParrafos);
+    font-size: 1.8rem;
+}
+
+.nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.8rem; /* Ajustar tamaño de letras */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #f0c040; /* Cambiar color del texto en hover */
+}
+
+
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    width: 0;
+    height: 3px; 
+    background-color: #f0c040; 
+    transition: width 0.3s ease; 
+}
+
+.nav ul li a:hover::after {
+    width: 100%; 
+}
+
+
+.webp .header {
+    background-image: url(../img/barra.webp);
+}
+
+.no-webp .header {
+    background-image: url(../img/barra.webp);
+}
+
+/* Responsividad */
+@media (max-width: 850px) {
+    .header {
+        flex-direction: column; /* Cambiar a columna */
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 2rem 1.5rem;
+    }
+
+    .header .nav {
+        flex-direction: row; /* Mantener el nav en fila */
+        justify-content: center;
+        width: 100%; /* Asegurar que ocupe todo el ancho */
+        margin-top: 1rem;
+    }
+
+    .nav ul {
+        flex-direction: row; /* Mantener enlaces en fila */
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .header .nav {
+        flex-direction: column; /* Cambiar a columna */
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .nav ul {
+        flex-direction: column; /* Colocar los enlaces en columna */
+        gap: 1rem;
+    }
+
+    .nav ul li a {
+        font-size: 1.8rem; /* Hacer texto más grande */
+        text-align: center;
+    }
+}
+

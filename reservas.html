@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" class="webp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserva tu mesa - Mesón La Paloma">
+    <title>Reservas - Mesón La Paloma</title>
+    <link rel="icon" type="image/png" href="img/favicon-01.svg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reservas.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a class="logo" href="index.html">
+            <h1 class="logo__nombre">Mesón <br> La Paloma</h1>
+        </a>
+        <div class="logo_meson">
+            <img id="mi-imagen" class="logo_img" fetchpriority="high" src="img/logoMeson.webp" alt="Logo del Mesón La Paloma">
+        </div>
+        <nav class="nav">
+            <ul class="ul">
+                <li class="li"><a href="nosotros.html" class="navegacion_enlace">Nosotros</a></li>
+                <li class="li"><a href="menu.html" class="navegacion_enlace">Menú</a></li>
+                <li class="li"><a href="contacto.html" class="navegacion_enlace">Contacto</a></li>
+                <li class="li"><a href="reservas.html" class="navegacion_enlace">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <form id="reservaForm" class="formulario" method="post" action="/reservar-mesa">
+            <h2 class="campo campo_titulo">Reserva tu mesa</h2>
+            <div class="campo">
+                <label for="nombre" class="campo__label">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="campo__field" required>
+            </div>
+            <div class="campo">
+                <label for="telefono" class="campo__label">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" class="campo__field" required>
+            </div>
+            <div class="campo">
+                <label for="email" class="campo__label">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" class="campo__field" required>
+            </div>
+            <div class="campo">
+                <label for="fecha" class="campo__label">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" class="campo__field" required>
+            </div>
+            <div class="campo">
+                <label for="hora" class="campo__label">Hora:</label>
+                <input type="time" id="hora" name="hora" class="campo__field" required>
+            </div>
+            <div class="campo">
+                <label for="personas" class="campo__label">Nº de Personas:</label>
+                <input type="number" id="personas" name="personas" class="campo__field" required>
+            </div>
+            <input type="submit" value="Reservar" class="boton boton--primario">
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="barra">
+            <a class="logo" href="index.html">
+                <img class="logo_img--footer" fetchpriority="high" src="img/logo-pequeño.webp" alt="Logo del Mesón en el footer">
+                <h1 class="logo__nombre">Mesón<br>La Paloma</h1>
+            </a>
+        </div>
+        <div class="contacto">
+            <ul class="ul">
+                <li class="li"><i class="fas fa-phone"></i> Teléfono: 608 83 65 64</li>
+                <li class="li"><i class="fas fa-map-marker-alt"></i> Dirección: Calle Artajona 9, Madrid</li>
+                <li class="li"><i class="fas fa-clock"></i> Horario: Martes a Sábado 8:30 a 1:00</li>
+                <li class="li"><i class="fas fa-clock"></i> Domingos de 9:00 a 17:00</li>
+            </ul>
+            <div class="footer-social-icon">
+                <a href="https://www.facebook.com/people/Mes%C3%B3n-La-Paloma/100090445720134/" aria-label="Facebook de Mesón La Paloma"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                <a href="https://www.twitter.com/mesonlapaloma" aria-label="Twitter de Mesón La Paloma"><i class="fab fa-twitter twitter-bg"></i></a>
+                <a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0xd422942c063ace7:0x3f45de6055d03ebb!12e1?source=g.page.m.kd._&laa=lu-desktop-review-solicitation" aria-label="Ubicación en Google Maps de Mesón La Paloma"><i class="fab fa-google-plus-g google-bg"></i></a>
+                <a href="https://www.instagram.com/mesonlapaloma/" aria-label="Instagram de Mesón La Paloma"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-uber-eats">
+                <a href="https://www.ubereats.com" target="_blank" aria-label="Uber Eats de Mesón La Paloma">
+                    <img src="img/uber-eats.svg" alt="Uber Eats" class="logo-uber-eats">
+                </a>
+            </div>
+        </div>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.601229524345!2d-3.7229303851056427!3d40.454406279364575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42284269d4db13%3A0xc10ef3e24183d5e0!2sCalle%20de%20Artajona%2C%209%2C%2028039%20Madrid%2C%20Spain!5e0!3m2!1ses!2ses" width="100%" height="250vh" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa de la ubicación del Mesón La Paloma"></iframe>
+        </div>
+    </footer>
+</body>
+</html>

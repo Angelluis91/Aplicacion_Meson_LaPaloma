@@ -1,0 +1,137 @@
+.section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.formulario {
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1c1c1c; /* Color de fondo más agradable */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Agrega sombra para destacar */
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.campo__label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Etiquetas en blanco */
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.campo__field {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    font-size: 1rem;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+}
+
+.campo__field:focus {
+    outline: none;
+    border-color: #f0c040; /* Borde amarillo al enfocarse */
+    box-shadow: 0px 0px 5px rgba(240, 192, 64, 0.5);
+}
+
+.campo__field--textarea {
+    height: 100px; /* Altura más amplia para el textarea */
+    resize: none; /* Desactiva el redimensionamiento */
+}
+
+.boton {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f0c040; /* Color del botón */
+    padding: 0.75rem;
+    color: #1c1c1c; /* Texto oscuro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #d1a837; /* Color del botón al pasar el cursor */
+}
+
+.boton:active {
+    background-color: #b88c30; /* Color del botón al hacer clic */
+}
+/* Overlay */
+#popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    z-index: 900; /* Colocado detrás del popup */
+    display: none; /* Oculto por defecto */
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #1c1c1c;
+    color: #ffffff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    z-index: 1000; /* Por encima del overlay */
+    text-align: center;
+    width: 500px; /* Ajusta el tamaño */
+    display: none; /* Oculto por defecto */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animación */
+    opacity: 0;
+}
+
+.popup.show {
+    display: block;
+    transform: translate(-50%, -50%) scale(1); /* Animación para agrandarse */
+    opacity: 1;
+}
+
+/* Texto del popup */
+.popup p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón en el popup */
+.popup button {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    background-color: #f0c040;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1c1c1c;
+    transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+    background-color: #d1a837;
+}
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+/* Estilos para el título del menú */
+.titulo_menu {
+    text-align: center;
+    font-size: 3.5rem; 
+    color: #f0c040; 
+    padding: 2rem;
+    text-transform: uppercase; 
+    letter-spacing: 0.1rem; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+/* Imagen centrada (menú principal) */
+.imagen-centrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.imagen-centrada img {
+    max-width: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease-in-out; 
+    cursor: pointer; /* Indicar clicable */
+}
+
+/* Efecto hover y click */
+.imagen-centrada img:hover {
+    transform: scale(0.95); /* Hundimiento al pasar el cursor */
+}
+
+.imagen-centrada img:active {
+    transform: scale(1.05); /* Ampliación al hacer clic */
+}
+
+/* Sección de días especiales */
+.dias-especiales {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.titulo-seccion {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid de las secciones especiales */
+.especiales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.especial {
+    background-color: #1c1c1c; /* Fondo oscuro para destacar */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar */
+    cursor: pointer; /* Indicar clicable */
+}
+
+.especial:hover {
+    transform: scale(0.95); /* Hundimiento al pasar el cursor */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.especial:active {
+    transform: scale(1.05); /* Ampliación al hacer clic */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.imagen-especial {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra en la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-especial:hover {
+    transform: scale(0.95); /* Hundimiento al pasar el cursor */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.imagen-especial:active {
+    transform: scale(1.05); /* Ampliación al hacer clic */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para los títulos de las secciones especiales */
+.especial h4 {
+    font-size: 2rem;
+    color: #f0c040; /* Color dorado */
+    margin: 1rem 0 0.5rem 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para los párrafos de las secciones especiales */
+.especial p {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f0c040;
+    color: #1c1c1c;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    background-color: #d1a837;
+}
+
+/* Efectos responsivos */
+@media (max-width: 768px) {
+    .titulo_menu {
+        font-size: 2.5rem; /* Reducir tamaño en dispositivos pequeños */
+    }
+
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+
+    .especial h4 {
+        font-size: 1.5rem;
+    }
+
+    .especial p {
+        font-size: 0.9rem;
+    }
+}

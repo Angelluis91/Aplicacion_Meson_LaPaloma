@@ -1,0 +1,71 @@
+:root {
+    --fuenteHeading: 'PT+sans', sans-serif;
+    --fuenteParrafos: 'Open+sans', sans-serif;
+    --primario: #784d3c;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --contraste-alto: #333333;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url(../img/fondo_madera.webp);
+    background-size: cover; /* La imagen de fondo cubrirá todo el área del body */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: italic normal 400 normal 16px/22px Arial, Verdana, sans-serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 3.8rem;
+    padding: 2rem;
+    color: #ffffff;
+}
+
+h3 {
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    color: #fff;
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+li {
+    list-style-type: none;
+}

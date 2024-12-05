@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es" class="webp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inicio del Mesón La Paloma">
+    <title>Inicio - Mesón La Paloma</title>
+    <link rel="icon" type="image/png" href="img/favicon-01.svg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/home.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Logo de texto clicable -->
+        <a class="logo" href="index.html" aria-label="Ir al inicio">
+            <h1 class="logo__nombre">Mesón <br> La Paloma</h1>
+        </a>
+    
+        <!-- Logo visual del Mesón -->
+        <div class="logo_meson">
+            <a href="index.html" aria-label="Ir al inicio">
+                <img id="mi-imagen" class="logo_img" src="img/logoMeson.webp" alt="Logo del Mesón La Paloma">
+            </a>
+        </div>
+
+        <!-- Menú de Navegación -->
+        <nav class="nav" aria-label="Menú principal">
+            <ul>
+                <li><a href="nosotros.html" class="navegacion_enlace">Nosotros</a></li>
+                <li><a href="menu.html" class="navegacion_enlace">Menú</a></li>
+                <li><a href="contacto.html" class="navegacion_enlace">Contacto</a></li>
+                <li><a href="reservas.html" class="navegacion_enlace">Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+        <!-- Filosofía -->
+        <section id="filosofia" class="section scroll-effect">
+            <h2 class="section-title">Nuestra Filosofía</h2>
+            <div class="grid-container">
+                <a href="menu.html#filosofia" class="card">
+                    <img src="img/Costillas_.webp" alt="Plato de costillas" class="card-img">
+                    <div class="card-content">
+                        <h3>Estilo Americano</h3>
+                        <p>El Mesón La Paloma combina la tradición culinaria americana con platos innovadores. Desde costillas jugosas hasta hamburguesas gourmet, ofrecemos una experiencia única y auténtica que conecta con los sabores de América.</p>
+                    </div>
+                </a>
+                <a href="menu.html#filosofia" class="card">
+                    <img src="img/Hamburguesa.webp" alt="Plato de hamburguesa" class="card-img">
+                    <div class="card-content">
+                        <h3>Esencia Mediterránea</h3>
+                        <p>Con un profundo respeto por la tradición mediterránea, nuestros platos destacan por su frescura y autenticidad. Desde pescados frescos hasta ensaladas vibrantes, evocamos los sabores del Mediterráneo en cada bocado.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Historia -->
+        <section id="historia" class="section scroll-effect">
+            <h2 class="section-title">Nuestra Historia</h2>
+            <div class="grid-container">
+                <a href="#" class="card">
+                    <img src="img/meson_viejo.webp" alt="Imagen antigua del Mesón" class="card-img">
+                    <div class="card-content">
+                        <h3>Nuestros comienzos</h3>
+                        <p>Hace más de 20 años, el Mesón La Paloma abrió sus puertas como un pequeño restaurante familiar. Con esfuerzo y dedicación, hemos crecido, manteniendo siempre nuestras raíces y valores tradicionales.</p>
+                    </div>
+                </a>
+                <a href="#" class="card">
+                    <img src="img/meson_nuevo.webp" alt="Imagen moderna del Mesón" class="card-img">
+                    <div class="card-content">
+                        <h3>Evolución constante</h3>
+                        <p>Hoy, el Mesón La Paloma es un espacio renovado que combina lo mejor de la tradición con toques modernos. Hemos transformado nuestro ambiente y oferta gastronómica para seguir sorprendiendo a nuestros clientes.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Equipo -->
+        <section id="equipo" class="section scroll-effect">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="grid-container equipo">
+                <a href="nosotros.html#equipo" class="card card-equipo">
+                    <img src="img/Maria-1024x601.webp" alt="Foto de María" class="card-img">
+                    <div class="card-content">
+                        <h3>María, Chef Ejecutiva</h3>
+                        <p>Con más de 15 años de experiencia, María lidera nuestra cocina con pasión y creatividad, diseñando platos que deleitan a cada comensal.</p>
+                    </div>
+                </a>
+                <a href="nosotros.html#equipo" class="card card-equipo">
+                    <img src="img/Personal.webp" alt="Foto del equipo del Mesón" class="card-img">
+                    <div class="card-content">
+                        <h3>Equipo de Servicio</h3>
+                        <p>Nuestro equipo está comprometido a brindar una atención cálida y personalizada, asegurando que cada visita sea memorable.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="barra">
+            <a class="logo" href="index.html">
+                <img class="logo_img--footer" fetchpriority="high" src="img/logo-pequeño.webp" alt="Logo del Mesón en el footer">
+                <h1 class="logo__nombre">Mesón<br>La Paloma</h1>
+            </a>
+        </div>
+        <div class="contacto">
+            <ul class="ul">
+                <li class="li"><i class="fas fa-phone"></i> Teléfono: 608 83 65 64</li>
+                <li class="li"><i class="fas fa-map-marker-alt"></i> Dirección: Calle Artajona 9, Madrid</li>
+                <li class="li"><i class="fas fa-clock"></i> Horario: Martes a Sábado 8:30 a 1:00</li>
+                <li class="li"><i class="fas fa-clock"></i> Domingos de 9:00 a 17:00</li>
+            </ul>
+            <div class="footer-social-icon">
+                <a href="https://www.facebook.com/people/Mes%C3%B3n-La-Paloma/100090445720134/" aria-label="Facebook de Mesón La Paloma"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                <a href="https://www.twitter.com/mesonlapaloma" aria-label="Twitter de Mesón La Paloma"><i class="fab fa-twitter twitter-bg"></i></a>
+                <a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0xd422942c063ace7:0x3f45de6055d03ebb!12e1?source=g.page.m.kd._&laa=lu-desktop-review-solicitation" aria-label="Ubicación en Google Maps de Mesón La Paloma"><i class="fab fa-google-plus-g google-bg"></i></a>
+                <a href="https://www.instagram.com/mesonlapaloma/" aria-label="Instagram de Mesón La Paloma"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-uber-eats">
+                <a href="https://www.ubereats.com" target="_blank" aria-label="Uber Eats de Mesón La Paloma">
+                    <img src="img/uber-eats.svg" alt="Uber Eats" class="logo-uber-eats">
+                </a>
+            </div>
+        </div>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.601229524345!2d-3.7229303851056427!3d40.454406279364575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42284269d4db13%3A0xc10ef3e24183d5e0!2sCalle%20de%20Artajona%2C%209%2C%2028039%20Madrid%2C%20Spain!5e0!3m2!1ses!2ses" width="100%" height="250vh" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa de la ubicación del Mesón La Paloma"></iframe>
+        </div>
+    </footer>
+</body>
+</html>
